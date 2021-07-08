@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+
+<body>
+    <!-- START NAV -->
+      <!-- START NAV -->
+  <nav class="navbar is-white">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item brand-text" href="../index.html">
+          Bulma Admin
+        </a>
+        <div class="navbar-burger burger" data-target="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">
+            Home
+          </a>
+          <a class="navbar-item" href="/contac">
+            Contacto
+          </a>
+          <a class="navbar-item" href="/about">
+            Sobre Nosotros
+          </a>
+          <a class="navbar-item" href="/login">
+            Login
+          </a>
+          <a class="navbar-item" href="/registro">
+            Registro
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+<!-- END NAV -->   
+    <div class='container'>
+        <div class='section'>
+            <h1>Supabase Auth Example</h1>
+        </div>
+        
+        <div hidden class='section'>
+            <form id='sign-up'>
+                <h3>Sign Up</h3>
+                <label>Email</label><input type='email' name='email' />
+                <label>Password</label><input type='password' name='password' />
+                <input type='submit'>
+            </form>
+        </div>  
+        <div class='section'>
+            <form id='log-in'>
+                <h3>Log In</h3>
+                <label>Email</label><input type='email' name='email' />
+                <label>Password</label><input type='password' name='password' />
+                <input type='submit'>
+            </form>
+        </div>
+        
+        <div class='section '>
+            <form hidden id='validate'>
+                <h3>Access Token</h3>
+                <input readonly=readonly type='text' id='access-token' /> <small>Default expiry is 60 minutes</small>
+                <h3>Refresh Token</h3>
+                <input readonly=readonly type='text' id='refresh-token' /> <small>Supabase-js will use this to automatically fetch a new accessToken for you every 60 mins whilst the client is running</small> 
+            </form>
+        </div>
+        <div hidden class='section'>
+            <h3>Fetch User Details</h3>
+            <button id='user-button'>Fetch</button>
+        </div> 
+        <div class='section'>
+            <h3>Logout</h3>
+            <button id='logout-button'>Logout</button>
+        </div>
+    </div>
+    <!-- Footer -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section-heading">
+      <p>
+        <strong>Bulma Personal Template</strong> by <a href="https://mubaidr.js.org">Muhammad Ubaid Raza</a>. The
+        source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+      </p>
+    </div>
+  </footer>
+
+  
+  <script async type="text/javascript" src="../js/bulma.js"></script>
+</body>
+
+</html>
