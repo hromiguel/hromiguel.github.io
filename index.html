@@ -1,111 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Hermano Miguel, Urbanizacion, Conocoto, La Salle, Valle de Los Chillos">
-    <title>Urb.Hro.Miguel</title>
-    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <!-- Bulma Version 0.9.0-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-    <style type="text/css">
-        html,
-        body {
-            font-family: 'Open Sans';
-        }
-
-        img {
-            padding: 5px;
-            border: 1px solid #ccc;
-        }
-    </style>
+    <link rel="icon" href="https://img.icons8.com/plasticine/100/000000/food.png" />
+    <link href="style.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <title>Urb-Hro-Miguel</title>
 </head>
-
 <body>
-    <section class="hero is-fullheight is-default is-bold">
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="../">
-                            <img src="./images/IMG_20210226_134457.jpg" alt="Logo">
-                        </a>
-                        <span class="navbar-burger burger" data-target="navbarMenu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenu" class="navbar-menu">
-                        <div class="navbar-end">
-                            <div class="tabs is-right">
-                                <ul>
-                                    <li class="is-active"><a href="https://condominiohm.netlify.app/">Inicio</a></li>
-                                    <li><a href="https://condominiohm.netlify.app/">Noticias</a></li>
-                                    <li><a href="https://condominiohm.netlify.app/login">Inicio Sesion</a></li>
-                                    <li><a href="https://condominiohm.netlify.app/register">Registrarse</a></li>
-                                    <li><a href="">Sobre Nosotros</a></li>
-                                </ul>
-                            </div>
-                        </div>
+    <header class="hero"> 
+        <div id="navbar" class="navbar">
+            <h1 class="logo"><span>Urb.</span> Hro. Miguel</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+              
+                <li><a href="#menu">Galeria</a></li>
+                <li><a href="https://hromiguel.alapec.com/#/">Blog</a></li>
+            
+            </ul>
+        </nav>
+        </div>
+        <div class="content">
+            <h1>El mejor lugar para vivir</h1>
+            <p>Noticias y novedades de nuestra Urbanización.</p>
+            <button class="btn"><a class="button is-medium is-info is-outlined" href="https://hromiguel.alapec.com/#/">Leer mas</a></button>
+        </div>
+    </header>
+    <main>
+        <section id="about" class="solutions flex-items">
+            <div class="row">
+                <div class="column">
+                    <div class="column1">
+                        <img src="images/IMG_20210226_134510.jpg" alt="">
                     </div>
                 </div>
-            </nav>
-        </div>
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="columns is-vcentered">
-                    <div class="column is-5">
-                        <figure class="image is-4by3">
-                            <img src="./images/IMG_20210226_134510.jpg" alt="Description">
-                        </figure>
+                    <div class="column">
+                    <div class="column2">
+                        <h4>Todo sobre Nosotros</h4>
+                        <p>Una Urbanización ubicada en el Valle de Chillos, Conocoto, sector La Salle ?</p>
+                    
                     </div>
-                    <div class="column is-6 is-offset-1">
-                        <h1 class="title is-2">
-                            Urbanización Hermano Miguel
-                        </h1>
-                        <h2 class="subtitle is-4">
-                            Noticias y comunicados sobre nuestra Urbanización.
-                        </h2>
-                        <br>
-                        <p class="has-text-centered">
-                          <li><a class="button is-medium is-info is-outlined" href="https://condominiohm.netlify.app/">Leer mas</a></li>
-                        </p>
-                    </div>
+                    <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Urbanizaci%C3%B3n%20Hermano%20Miguel+(Urb.%20Hro.%20Miguel)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="200" frameborder="0"></iframe><a href="http://www.gps.ie/">gps devices</a></div>
                 </div>
             </div>
+        </section>
+    </main>
+    <section id="menu" class="flex-items cases">
+        <header>
+            <h4>Galeria</h4>
+           
+        <p>Nuestras instalaciones.</p></header>
+    <div class="row">
+            <div class="column">
+          
+                <img src="images/IMG_20210226_134457.jpg">
+                <img src="images/IMG_20210226_134510.jpg" alt="">
+            </div>
+            <div class="column">
+                <img src="images/IMG_20210226_134531.jpg" alt="">
+                <img src="images/IMG_20210226_134811.jpg" alt="">
+            </div>
+            <div class="column">
+          
+                <img src="images/IMG_20210226_134842.jpg" alt="">
+                <img src="images/IMG_20210226_134912.jpg" alt="">
+            </div>
+            <div class="column">
+          
+                <img src="images/IMG_20210226_135136.jpg" alt="">
+                <img src="images/IMG_20210226_135244.jpg" alt="">
+            </div>
         </div>
+       
+    </div>
+    </header>
 
-        <div class="hero-foot">
-            <div class="container">
-                <div class="tabs is-centered">
-                    <ul>
-                        <li><a>Urb. Hro. Miguel, Quito, Valle de los Chillos, Conocoto, La Salle</a>
-                       <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Urbanizaci%C3%B3n%20Hermano%20Miguel+(Urb.%20Hro.%20Miguel)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="200" frameborder="0"></iframe><a href="http://www.gps.ie/">gps devices</a></div>
-                       </li>
-                    </ul>
-                                                                 
-                     
-                </div>
-            </div>
-        </div>
     </section>
-    <script >
-     // The following code is based off a toggle menu by @Bradcomp
-      // source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
-      (function() {
-        var burger = document.querySelector('.burger');
-        var menu = document.querySelector('#'+burger.dataset.target);
-            burger.addEventListener('click', function() {
-            burger.classList.toggle('is-active');
-            menu.classList.toggle('is-active');
-          });
-      })();
-    </script>
+  
+    
+    <footer class="footer bg-dark">
+        <div class="social">
+          <a href="index.html"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+          <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+          <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Copyright &copy; 2021 - <span><a href="https://hromiguel.alapec.com/#/">alapec.com</a> </span></p>
+      </footer>
 </body>
-
 </html>
-
