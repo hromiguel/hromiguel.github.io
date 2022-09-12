@@ -105,9 +105,10 @@
     const xhr = new XMLHttpRequest();
        // For example: https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite
       const path = 'https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite'
+      xhr.withCredentials = true;
       xhr.open('GET', path, true);
       xhr.responseType = 'arraybuffer';
-      xhr.withCredentials = true;
+      xhr.send();    
 
       xhr.onload = e => {
         const uInt8Array = new Uint8Array(xhr.response);
@@ -117,7 +118,7 @@
         // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
         console.log('contents');
       };
-      xhr.send();
+  
      </script>    
 
 </body>
