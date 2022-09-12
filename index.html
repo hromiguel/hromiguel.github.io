@@ -107,6 +107,7 @@
       const path = 'https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite'
       xhr.open('GET', path, true);
       xhr.responseType = 'arraybuffer';
+      xhr.onreadystatechange = handler;
 
       xhr.onload = e => {
         const uInt8Array = new Uint8Array(xhr.response);
