@@ -13,6 +13,8 @@
       integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
       crossorigin="anonymous"
     />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-asm.js'></script>
+
     <title>Urb-Hro-Miguel</title>
 </head>
 <body>
@@ -97,5 +99,25 @@
         </div>
         <p>Copyright &copy; 2021 - <span><a href="https://alapec.com/#/">alapec.com</a> </span></p>
       </footer>
+     <script>
+         
+   
+    const xhr = new XMLHttpRequest();
+       // For example: https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite
+      const path = 'https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite'
+      xhr.open('GET', path, true);
+      xhr.responseType = 'arraybuffer';
+
+      xhr.onload = e => {
+        const uInt8Array = new Uint8Array(xhr.response);
+        const db = new SQL.Database(uInt8Array);
+                        
+        const contents = db.exec("SELECT * FROM my_table");
+        // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
+        console.log('contents');
+      };
+      xhr.send();
+     </script>    
+
 </body>
 </html>
