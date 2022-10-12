@@ -37,7 +37,7 @@
        locateFile: file => `https://sql.js.org/dist/${file}`   
       });
    
-  const dataPromise = fetch("../.data.db")
+  const dataPromise = fetch("../datos.base")
 //   const dataPromise = fetch(url, corsHeaders )
 	  .then(res => res.arrayBuffer());
    const [SQL, buf] = await Promise.all([sqlPromise, dataPromise])
