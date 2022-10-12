@@ -25,7 +25,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="https://webhromiguel.alapec.com/consultasocio/">Socios</a></li>
+                <li><a href="/socios">Socios</a></li>
               
                 <li><a href="https://webhromiguel.alapec.com/cnstaegreso/">Egresos</a></li>
                 <li><a href="https://webhromiguel.alapec.com/estadocta/">Estado de Cuenta</a></li>            
@@ -99,27 +99,7 @@
         </div>
         <p>Copyright &copy; 2021 - <span><a href="https://alapec.com/#/">alapec.com</a> </span></p>
       </footer>
-     <script>
-         
-   
-    const xhr = new XMLHttpRequest();
-       // For example: https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite
-      const path = 'https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite'
-      xhr.withCredentials = true;
-      xhr.open('GET', path, true);
-      xhr.responseType = 'arraybuffer';
-      xhr.send();    
-
-      xhr.onload = e => {
-        const uInt8Array = new Uint8Array(xhr.response);
-        const db = new SQL.Database(uInt8Array);
-                        
-        const contents = db.exec("SELECT * FROM my_table");
-        // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
-        console.log('contents');
-      };
-  
-     </script>    
+      
 
 </body>
 </html>

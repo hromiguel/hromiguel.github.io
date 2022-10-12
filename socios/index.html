@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Socios :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="../components/header.js" type="text/javascript" defer></script>
+  <script src="../components/footer.js" type="text/javascript" defer></script>
+
+</head>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-asm.js'></script>  
+  <script type="module">
+  // import { html, component, useState } from 'https://cdn.pika.dev/haunted';	  
+   const sqlPromise = initSqlJs({
+       locateFile: file => `https://sql.js.org/dist/${file}`   
+      });
+   
+  const dataPromise = fetch(".data.db")
+//   const dataPromise = fetch(url, corsHeaders )
+	  .then(res => res.arrayBuffer());
+   const [SQL, buf] = await Promise.all([sqlPromise, dataPromise])
+   const db = new SQL.Database(new Uint8Array(buf));	  
+   let rows = [];
+   let select = '';
+   console.log('db cargada');
+   //  ingresar el nombre de la tabla a leer
+   creaHtml('socios');
+
+   async function creaHtml(tabla) {
+     select = `SELECT lote, 
+                      nombre,
+                      email,
+                      telfmovil,
+                      telffijo,
+                      propietario
+
+               FROM ${tabla} `;
+     const data = await leerTodo(db);
+     const output = document.getElementById('output')
+     output.innerHTML = json2Table(data)
+
+  }
+
+
+
+   function leerTodo(db) {
+      const stmt = db.prepare(select);
+      while(stmt.step()) { 
+        const row = stmt.getAsObject();
+        rows.push(row);
+        
+     }
+     return rows;
+   }		     
+
+   function json2Table(json) {
+    let cols = Object.keys(json[0]);
+
+
+    //  Map over columns, make headers,join into string
+    let headerRow = cols
+      .map(col => `<th>${col}</th>`)
+     .join("");
+
+    //map over array of json objs, for each row(obj) map over column values,
+    //and return a td with the value of that object for its column
+    //take that array of tds and join them
+   //then return a row of the tds
+   //finally join all the rows together
+    let rows = json
+      .map(row => {
+        let tds = cols.map(col => `<td>${row[col]}</td>`).join("");
+        return `<tr>${tds}</tr>`;
+      })
+      .join("");
+
+    //build the table
+   const table = `
+  	<table>
+	  	<thead>
+	  		<tr>${headerRow}</tr>
+	  	<thead>
+	  	<tbody>
+	  		${rows}
+	  	<tbody>
+	  <table>`;
+
+  return table;
+  }
+   
+  </script>
+  <body>
+     <!-- columns should be the immediate child of a .row -->
+  <div class="row">
+    <div class="one column">One</div>
+    <div class="eleven columns">
+      <header-component></header-component>
+      <h1>Socios</h1>	    
+      <p id='output'> </p>
+      <footer-component></footer-component>
+    </div>
+  </div>
+  </body>
+</html>

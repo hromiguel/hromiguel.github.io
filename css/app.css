@@ -1,0 +1,151 @@
+
+#app {
+    color: #333;
+    background: #fff;
+    width: 100%;
+    max-width: 42em;
+    margin: 0 auto;
+    padding: 1em;
+    box-shadow: 0 .5em 1em rgba(0,0,0,.3);
+}
+.app__title {
+    font-size: 2em;
+    font-family: serif;
+    margin: 1em 0 .5em;
+}
+
+table {
+    width: 100%;
+    margin: 0 0 1em;
+    border-collapse: collapse;
+    transition: .3s;
+}
+table.users__loading {
+    pointer-events: none;
+    opacity: .5;
+}
+th {
+    background-color: #CCCCCD;
+    text-align: left;
+    font-family: sans-serif;
+}
+tr {
+    background-color: #f8f8f8;
+}
+tr:nth-child(2n+1) {
+    background-color: #EDEDED;
+}
+tr:hover {
+    background-color: #f8f8e4;
+}
+th,td {
+    margin: 0;
+    padding: .3em .5em;
+    cursor: default;
+}
+th:not(:first-child),
+td:not(:first-child) {
+    border-left: 1px solid white;
+}
+
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    top: 110px;
+    left: 50%;
+    width: 20em;
+    margin-left: -10em;
+    padding: 1em;
+    box-sizing: border-box;
+    background: white;
+    border-radius: .2em;
+    box-shadow: .2em .3em .5em rgba(0,0,0,.3);
+    transition: .3s;
+}
+.modal--open {
+    visibility: visible;
+    opacity: 1;
+    top: 2em;
+}
+.modal__shade {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    transition: .3s;
+    -webkit-backdrop-filter: blur(1em);
+}
+.modal--open ~ .modal__shade {
+    visibility: visible;
+    opacity: 1;
+}
+.modal__close {
+    position: absolute;
+    top: -1em;
+    right: -1em;
+    color: white;
+    background: rgb(225, 5, 64);
+    text-align: center;
+    width: 2em;
+    line-height: 2em;
+    border-radius: 1em;
+    cursor: pointer;
+    box-shadow: .1em .2em .3em rgba(0,0,0,.4);
+    transition: .3s;
+}
+.modal__close:hover {
+    background-color: rgb(198, 4, 56);
+}
+.modal__title {
+    margin: 0 0 .2em;
+}
+form label {
+    font-family: sans-serif;
+}
+form input {
+    font-size: inherit;
+    font-family: serif;
+}
+
+.btn,
+.btn__create,
+.btn__edit,
+.btn__delete,
+.btn__submit {
+    display: inline-block;
+    text-decoration: none;
+    padding: .3em .5em;
+    color: #333;
+    background-color: #ccc;
+    border-radius: .1em;
+    transition: .3s;
+    font-family: sans-serif;
+    border: 0;
+    font-size: inherit;
+    cursor: pointer;
+}
+.btn:hover,
+.btn__create:hover,
+.btn__edit:hover {
+    color: #eee;
+    background: #999;
+}
+
+.btn__delete:hover {
+    color: #eee;
+    background-color: #944;
+}
+.btn__submit:hover {
+    color: #eee;
+    background-color: #494;
+}
+.btn__submit[disabled] {
+    color: #777;
+    background: #999;
+}
