@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Estado de Cuenta</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/app.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="../components/header.js" type="text/javascript" defer></script>
+  <script src="../components/footer.js" type="text/javascript" defer></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-asm.js'></script>  
+</head>
+<body>
+
+  
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one column"></div>
+      <div class="eleven columns">
+        <header-component></header-component>
+        <h1>Estado de Cuenta</h1>
+        <div>
+          <label for="lote">Lote Nro.: </label>
+          <select id="lote" name="lote" >
+          </select>
+        </div>
+        
+          <button id="prevButton" >Consultar</button>
+          <div id="salida"></div>
+          <footer-component></footer-component>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="module" src="index.js"></script>
+</body>
+</html>
